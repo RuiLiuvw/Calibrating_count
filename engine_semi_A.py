@@ -148,6 +148,7 @@ def crop_emp(img_s, tar_s):
         # print()
         red1 = np.random.randint(low = 20,high = 30, size=1)[0]
         red2 = np.random.randint(low = 20,high = 30, size=1)[0]
+        # 由于对输入图片做了Normlized，-2.1179，-2.0357，和-1.8044分别对应RGB通道的原始值为0
         img_new[0, x[i]: np.minimum( 128,x[i]+red1 ), y[i]: np.minimum( 128,y[i]+red2 )] = -2.1179
         img_new[1, x[i]: np.minimum( 128,x[i]+red1 ), y[i]: np.minimum( 128,y[i]+red2 )] = -2.0357
         img_new[2, x[i]: np.minimum( 128,x[i]+red1 ), y[i]: np.minimum( 128,y[i]+red2 )] = -1.8044
