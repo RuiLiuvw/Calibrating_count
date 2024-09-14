@@ -337,7 +337,7 @@ def train_one_epoch(model: torch.nn.Module, model_teacher: torch.nn.Module, crit
         # calc the losses
         loss_dict = criterion(outputs, targets)
         weight_dict = criterion.weight_dict
-        confi_losses = listmle_loss( train_d, img_1, name_1, model )
+        confi_losses = listmle_loss( train_d, img_1, name_1, model )  # name_1是img的不带后缀'.png'的名字
         losses = sum(loss_dict[k] * weight_dict[k] for k in loss_dict.keys() if k in weight_dict) 
         if epoch > in_epoch:
             unlosses = unsupervise_loss( unsamples, model,model_teacher, criterion , epoch, end_pro )
