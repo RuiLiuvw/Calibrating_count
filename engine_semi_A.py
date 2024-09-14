@@ -248,6 +248,7 @@ def unsupervise_loss( imgs, model, model_teacher,creti , epoch, end_pro ):
 
                 else:
                     # chon = patch_gen(sup_pconf)[0]
+                    # 由于对输入图片做了Normlized，-2.1179，-2.0357，和-1.8044分别对应RGB通道的原始值为0
                     imgs[co, 0, i_1*64:(i_1*64 + 64), i_2*64:(i_2*64 + 64)] = -2.1179
                     imgs[co, 1, i_1*64:(i_1*64 + 64), i_2*64:(i_2*64 + 64)] = -2.0357
                     imgs[co, 2, i_1*64:(i_1*64 + 64), i_2*64:(i_2*64 + 64)] = -1.8044
